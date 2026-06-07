@@ -1,11 +1,12 @@
-# Brunhilde Stumpe - Raus aus der Angst
+# Bruni
 
-Statische Onepage fuer die Personal Brand und Buchvorstellung von Brunhilde Stumpe.
+Statische Onepage fuer Bruni: Erfahrungswissen, Buchvorstellung und alltagstaugliche Impulse rund um Angst und Panikattacken.
 
 ## Inhalt
 
 - Hero mit klarer Positionierung
-- Eingebundenes Brunhilde-Stumpe-Logo
+- Bruni-Marke ohne ausgeschriebenen Personennamen
+- SEO-Meta-Daten, Open Graph und strukturierte FAQ-Daten
 - Orientierungspfade fuer Besucherinnen und Besucher
 - Buch- und Arbeitsbuchbereich
 - Wissenswelt-Teaser
