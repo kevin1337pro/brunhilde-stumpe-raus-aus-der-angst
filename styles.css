@@ -100,9 +100,9 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 18px;
   min-height: 74px;
-  padding: 14px max(20px, calc((100vw - 1120px) / 2));
+  padding: 12px max(18px, calc((100vw - 1280px) / 2));
   color: var(--white);
   transition: background 180ms ease, box-shadow 180ms ease, color 180ms ease;
 }
@@ -119,20 +119,31 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  min-width: 220px;
+  flex: 0 0 auto;
+  min-width: 236px;
   text-decoration: none;
 }
 
 .brand-mark {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  font-family: var(--serif);
-  font-weight: 700;
-  line-height: 1;
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(255, 253, 249, 0.42);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #3f433b;
+  box-shadow: 0 10px 22px rgba(37, 48, 45, 0.16);
+}
+
+.site-header.is-scrolled .brand-mark,
+.site-header.menu-active .brand-mark {
+  border-color: rgba(37, 48, 45, 0.16);
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .brand strong,
@@ -154,15 +165,17 @@ textarea {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
+  min-width: 0;
 }
 
 .main-nav a {
   border-radius: 999px;
-  padding: 8px 12px;
-  font-size: 0.88rem;
+  padding: 8px 10px;
+  font-size: 0.86rem;
   font-weight: 700;
   text-decoration: none;
+  white-space: nowrap;
   transition: background 160ms ease, color 160ms ease;
 }
 
@@ -719,6 +732,95 @@ h3 {
   font-weight: 700;
 }
 
+.daily-life {
+  background: linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%);
+}
+
+.daily-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 56px;
+  align-items: end;
+  margin-bottom: 34px;
+}
+
+.daily-intro p {
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.daily-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.daily-card {
+  display: grid;
+  gap: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 26px;
+  background: rgba(255, 253, 249, 0.86);
+  box-shadow: 0 14px 38px rgba(37, 48, 45, 0.08);
+}
+
+.daily-card-head span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: rgba(102, 133, 119, 0.14);
+  color: var(--deep-sage);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.daily-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.step-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step-list li {
+  position: relative;
+  padding-left: 30px;
+  font-weight: 700;
+}
+
+.step-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.44em;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--terracotta);
+  border-radius: 50%;
+  background: rgba(200, 117, 89, 0.1);
+}
+
+.daily-note {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  border-left: 5px solid var(--gold);
+  border-radius: 8px;
+  padding: 18px 20px;
+  background: rgba(255, 253, 249, 0.72);
+}
+
+.daily-note span {
+  color: var(--muted);
+}
+
 .freebie {
   background: linear-gradient(90deg, var(--mist), var(--paper));
 }
@@ -835,6 +937,21 @@ textarea:focus {
   gap: 20px;
 }
 
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 720px;
+}
+
+.footer-brand img {
+  flex: 0 0 auto;
+  width: 84px;
+  height: 84px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
 .footer-layout p {
   margin: 0;
 }
@@ -898,6 +1015,7 @@ textarea:focus {
 
   .two-column,
   .story-layout,
+  .daily-intro,
   .freebie-layout,
   .contact-layout,
   .product-grid {
@@ -920,6 +1038,10 @@ textarea:focus {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .daily-grid {
+    grid-template-columns: 1fr;
+  }
+
   .bundle-strip {
     align-items: flex-start;
     flex-direction: column;
@@ -933,6 +1055,11 @@ textarea:focus {
 
   .brand {
     min-width: 0;
+  }
+
+  .brand-mark {
+    width: 46px;
+    height: 46px;
   }
 
   .brand small {
@@ -1006,6 +1133,15 @@ textarea:focus {
   .footer-layout {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .footer-brand {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .daily-note {
+    display: block;
   }
 
   .mobile-sticky-cta {
